@@ -5,11 +5,11 @@ function StockEventsTable(props) {
         return (
             <div className="StockEventsTable">
                 {stockEvents.map(event =>(
-                    <div>
+                    <div className="StockEventTable_Card">
                         <p>Id:{event.id}</p>
-                        <p>Title:{event.title}</p>
+                        <p>Type:{event.type}</p>
                         <p>Quantity:{event.qty}</p>
-                        <p>Name:{event.name}</p>
+                        <p>Product Name:{event.product.name}</p>
                     </div>
                 ))}
             </div>
