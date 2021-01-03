@@ -1,4 +1,5 @@
 import React from 'react'
+import StockDetail from './StockDetail'
 
 function StockEventsTable(props) {
     const {products, stockEvents} = props
@@ -15,15 +16,10 @@ function StockEventsTable(props) {
 
                     return(
                         <div className="StockEventsTable_ProductsContainer">
-                            <h2>Product: {product.name} | Total:{stockTotal}</h2>
-                            {relevantStockEvents.map(event =>(
-                              <div className="StockEventTable_Card">
-                                <p>Id:{event.id}</p>
-                                <p>Type:{event.type}</p>
-                                <p>Quantity:{event.qty}</p>
-                                <p>Product Name:{event.product.name}</p>
-                              </div>
-                            ))}
+                            <StockDetail
+                              name={product.name} 
+                              total={stockTotal}
+                              stockEvents={relevantStockEvents}/>
 
                         </div>
                     )
