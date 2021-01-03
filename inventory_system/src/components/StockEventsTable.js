@@ -9,9 +9,13 @@ function StockEventsTable(props) {
                     const {id} = product
 
                     const relevantStockEvents = stockEvents.filter(se => se.product.id === product.id)
+                    const stockTotal = relevantStockEvents.reduce((accumulator, currentElement) =>{
+                        return accumulator + currentElement.qty
+                    },0)
+
                     return(
-                        <div>
-                            <h2>Product: {product.name}</h2>
+                        <div className="StockEventsTable_ProductsContainer">
+                            <h2>Product: {product.name} | Total:{stockTotal}</h2>
                             {relevantStockEvents.map(event =>(
                               <div className="StockEventTable_Card">
                                 <p>Id:{event.id}</p>
