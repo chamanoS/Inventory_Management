@@ -4,7 +4,9 @@ function StockEventsTable(props) {
     const {stockEvents} = props
         return (
             <div className="StockEventsTable">
-                {[1,2,3]}
+                {stockEvents.map(event =>(
+                    <p>Quantity:{event.qty}</p>
+                ))}
             </div>
         )
 }
